@@ -1,1 +1,49 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Names and Letter Count</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Letter Count</th>
+        </tr>
+    </thead>
+    <tbody id="nameTable">
+    </tbody>
+</table>
+
+<script>
+    const names = ["john", "jane", "jim"];
+    const tableBody = document.getElementById('nameTable');
+
+    names.forEach(name => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${name}</td><td>${name.length}</td>`;
+        tableBody.appendChild(row);
+    });
+</script>
+
+</body>
+</html>
+
